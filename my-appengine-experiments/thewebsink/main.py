@@ -25,5 +25,12 @@ class MainHandler(webapp2.RequestHandler):
 		tl = je.get_template('login.htm')
 		self.response.out.write(tl.render({}))
 
+
+class oauthHandler(webapp2.RequestHandler):
+	def get(self):
+		self.response.out.write("Welcome...")
+		self.response.out.write("\n")
+		self.response.out.write("Oauth Token = %s" % 'test')
+		
 app = webapp2.WSGIApplication([('/', MainHandler)],
                               debug=True)
